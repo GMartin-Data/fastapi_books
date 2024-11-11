@@ -49,7 +49,7 @@ async def read_author_category_by_query(book_author: str, category: str):
 @app.post("/books/create_book")
 async def create_book(new_book=Body()):
     BOOKS.append(new_book)
-    
+
 
 @app.put("/books/update_book")
 async def update_book(updated_book=Body()):
@@ -57,7 +57,7 @@ async def update_book(updated_book=Body()):
         if BOOKS[idx].get("title").casefold() == updated_book.get("title").casefold():
             BOOKS[idx] = updated_book
             break
-        
+
 
 @app.delete("/books/delete_book/{book_title}")
 async def delete_book(book_title: str):
