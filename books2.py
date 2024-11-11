@@ -44,8 +44,5 @@ async def create_book(book_request: BookRequest):
 
 
 def find_book_id(book: Book):
-    if BOOKS:
-        book.id = BOOKS[-1].id + 1
-    else:
-        book.id = 1
+    book.id = 1 if not BOOKS else BOOKS[-1].id + 1
     return book
