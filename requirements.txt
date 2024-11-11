@@ -1,0 +1,5 @@
+bandit<2
+fastapi[standard]<2
+loguru<2
+mypy<2
+ruff<2
